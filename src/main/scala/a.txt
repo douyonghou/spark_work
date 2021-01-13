@@ -1,3 +1,0 @@
-java java python scala
-hive java
-spark

@@ -15,36 +15,33 @@
 <!--    </properties>-->
 
     <dependencies>
-        <!--添加Spark依赖-->
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.12</artifactId>
             <version>2.4.1</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.12</artifactId>
             <version>2.4.1</version>
         </dependency>
-
-
-
-        <!--        &lt;!&ndash;添加Scala依赖&ndash;&gt;-->
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>2.12.12</version>
         </dependency>
-<!--        &lt;!&ndash;添加Hadoop依赖&ndash;&gt;-->
-        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>2.7.5</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_2.12</artifactId>
+            <version>2.4.1</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+
 
     </dependencies>
 

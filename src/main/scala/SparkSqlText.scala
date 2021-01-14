@@ -12,11 +12,7 @@ object SparkSqlText {
     val rdd = spark.sparkContext.makeRDD(List(("001", "核事故", "重大事件"), ("002", "生化危机", "重大事件"), ("003", "自杀事件", "较为严重")))
     // rdd转df
     val df = rdd.toDF("orgId", "sglx", "sgdj")
-    df.map{
-      x =>
-        println(x.getAs[String]("orgId"))
 
-    }
     df.show(10)
     // df 转ds
     val ds: Dataset[Sgzb] = df.as[Sgzb]

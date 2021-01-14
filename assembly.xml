@@ -1,24 +1,21 @@
 <assembly>
-    <id></id>
+    <id>jar-with-dependencies</id>
     <formats>
-<!--        <format>tar.gz</format>&lt;!&ndash;打包的文件格式,也可以有：war zip&ndash;&gt;-->
         <format>jar</format>
     </formats>
-    <!--tar.gz压缩包下是否生成和项目名相同的根目录-->
-    <includeBaseDirectory>true</includeBaseDirectory>
+    <includeBaseDirectory>false</includeBaseDirectory>
     <dependencySets>
         <dependencySet>
-            <!--是否把本项目添加到依赖文件夹下-->
             <useProjectArtifact>true</useProjectArtifact>
-            <outputDirectory>lib</outputDirectory>
-            <!--将scope为runtime的依赖包打包-->
+            <outputDirectory>/</outputDirectory>
+            <unpack>true</unpack>
             <scope>runtime</scope>
         </dependencySet>
-    </dependencySets>
-    <fileSets>
-        <fileSet>
-            <directory>src/main/bin</directory>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
             <outputDirectory>/</outputDirectory>
-        </fileSet>
-    </fileSets>
+            <unpack>true</unpack>
+            <scope>system</scope>
+        </dependencySet>
+    </dependencySets>
 </assembly>

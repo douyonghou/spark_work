@@ -1,3 +1,5 @@
+package com.study.kafka
+
 import java.util.Properties
 
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord, RecordMetadata}
@@ -11,7 +13,8 @@ object KafkaProductTest {
     properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
     properties.put("request.timeout.ms", "600000")
     val producer = new KafkaProducer[String, String](properties)
-    val metadata: RecordMetadata = producer.send(new ProducerRecord[String, String]("yundun","hello")).get
+    val metadata: RecordMetadata = producer.send(new ProducerRecord[String, String]("yundun",args(0))).get
+    producer.close()
 
   }
 

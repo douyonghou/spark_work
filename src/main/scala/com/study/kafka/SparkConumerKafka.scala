@@ -90,7 +90,8 @@ object SparkConumerKafka {
 //                   evnet_type:Int)
 /*
 
-./bin/spark-submit --class org.apache.spark.examples.SparkPi \
+export PSARK_HOME=/opt/spark-2.1.1-bin-hadoop2.7/bin/
+$PSARK_HOME/spark-submit --class com.study.kafka.SparkConumerKafka \
 --master yarn \
 --deploy-mode cluster \
 --driver-memory 4g \
@@ -98,4 +99,16 @@ object SparkConumerKafka {
 --executor-cores 1 \
 lib/spark-examples*.jar \
 10
+
+
+export PSARK_HOME=/opt/spark-2.4.1-bin-hadoop2.7/bin
+$PSARK_HOME/spark-submit --class com.study.kafka.SparkConumerKafka \
+--master yarn \
+--name SparkConumerKafka \
+--deploy-mode cluster \
+spark_work-1.0-SNAPSHOT-jar-with-dependencies.jar
+yarn logs -applicationId application_1612295319417_0003  -out ./info
+
+sh kafka-server-start.sh ../config/server.properties
+sh zookeeper-server-start.sh ../config/zookeeper.properties
 */
